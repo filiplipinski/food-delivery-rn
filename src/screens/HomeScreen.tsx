@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, FONTS, icons, SIZES } from '../constants';
 import { initialCurrentLocation } from '../data/data';
 
-export const Home = () => {
+export const HomeScreen = () => {
   return (
     <SafeAreaView>
       <View style={{ flexDirection: 'row', height: 50 }}>
@@ -13,7 +13,8 @@ export const Home = () => {
             width: 50,
             paddingLeft: SIZES.padding * 2,
             justifyContent: 'center',
-          }}>
+          }}
+        >
           <Image
             source={icons.nearby}
             resizeMode="contain"
@@ -25,7 +26,8 @@ export const Home = () => {
         </TouchableOpacity>
 
         <View
-          style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+        >
           <View
             style={{
               width: '70%',
@@ -34,7 +36,8 @@ export const Home = () => {
               alignItems: 'center',
               justifyContent: 'center',
               borderRadius: SIZES.radius,
-            }}>
+            }}
+          >
             <Text style={{ ...FONTS.h3 }}>
               {initialCurrentLocation.streetName}
             </Text>
@@ -46,7 +49,8 @@ export const Home = () => {
             width: 50,
             paddingRight: SIZES.padding * 2,
             justifyContent: 'center',
-          }}>
+          }}
+        >
           <Image
             source={icons.basket}
             resizeMode="contain"

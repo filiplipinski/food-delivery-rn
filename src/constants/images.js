@@ -28,7 +28,7 @@ import sushi from '../../assets/images/sushi.jpg';
 import teh_c_peng from '../../assets/images/teh-c-peng.jpg';
 import tomato_pasta from '../../assets/images/tomato-pasta.jpg';
 
-export default {
+export const images = {
   avatar_1,
   avatar_2,
   avatar_3,

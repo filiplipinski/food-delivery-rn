@@ -24,7 +24,7 @@ import star from '../../assets/icons/star.png';
 import sushi from '../../assets/icons/sushi.png';
 import user from '../../assets/icons/user.png';
 
-export default {
+export const icons = {
   back,
   car,
   cutlery,
@@ -51,3 +51,6 @@ export default {
   sushi,
   user,
 };
+
+// TODO: to jak zostanie zmienione na .ts
+// export type Icons = keyof typeof icons;
