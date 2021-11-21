@@ -9,6 +9,7 @@ import {Tabs} from './navigation/Tabs';
 
 const Stack = createStackNavigator();
 
+// TODO1: stworzec enum routes i odzielic do osobnego pliku
 export const App = () => {
   return (
     <NavigationContainer>
@@ -16,8 +17,8 @@ export const App = () => {
         screenOptions={{headerShown: false}}
         initialRouteName="Home">
         <Stack.Screen name="Home" component={Tabs} />
-        {/* <Stack.Screen name="OrderDelivery" component={OrderDelivery} />
-        <Stack.Screen name="Restaurant" component={Restaurant} /> */}
+        <Stack.Screen name="OrderDelivery" component={OrderDelivery} />
+        <Stack.Screen name="Restaurant" component={Restaurant} />
       </Stack.Navigator>
     </NavigationContainer>
   );

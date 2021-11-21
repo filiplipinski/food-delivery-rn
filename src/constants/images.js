@@ -22,7 +22,7 @@ import nasi_lemak from '../../assets/images/nasi-lemak.jpg';
 import noodle_shop from '../../assets/images/noodle-shop.jpg';
 import pizza_restaurant from '../../assets/images/pizza-restaurant.jpg';
 import pizza from '../../assets/images/pizza.jpg';
-// import  salad from '../../assets/images/salad.jpg';
+import salad from '../../assets/images/salad.jpg';
 import sarawak_laksa from '../../assets/images/sarawak-laksa.jpg';
 import sushi from '../../assets/images/sushi.jpg';
 import teh_c_peng from '../../assets/images/teh-c-peng.jpg';
@@ -55,6 +55,7 @@ export default {
   noodle_shop,
   pizza_restaurant,
   pizza,
+  salad,
   sarawak_laksa,
   sushi,
   teh_c_peng,

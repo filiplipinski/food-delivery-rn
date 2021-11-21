@@ -25,7 +25,7 @@ const CustomTabBarButton = ({
     return (
       <View style={{flex: 1, alignItems: 'center'}}>
         <View style={{flexDirection: 'row', position: 'absolute', top: 0}}>
-          <View style={{flex: 1, backgroundColor: COLORS.white}}></View>
+          <View style={{flex: 1, backgroundColor: COLORS.white}} />
           <Svg width={70} height={61} viewBox="0 0 75 61">
             {/* circle-block curve */}
             <Path
@@ -33,7 +33,7 @@ const CustomTabBarButton = ({
               fill={COLORS.white}
             />
           </Svg>
-          <View style={{flex: 1, backgroundColor: COLORS.white}}></View>
+          <View style={{flex: 1, backgroundColor: COLORS.white}} />
         </View>
 
         <TouchableOpacity
@@ -79,7 +79,8 @@ const CustomTabBar = (props: BottomTabBarProps) => {
             right: 0,
             height: 30,
             backgroundColor: COLORS.white,
-          }}></View>
+          }}
+        />
         <BottomTabBar {...props} />
       </View>
     );
