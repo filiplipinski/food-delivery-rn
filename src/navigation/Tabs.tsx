@@ -1,16 +1,16 @@
 import React from 'react';
-import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import {
   BottomTabBar,
   BottomTabBarButtonProps,
   BottomTabBarProps,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import Svg, {Path} from 'react-native-svg';
-import {isIphoneX} from 'react-native-iphone-x-helper';
+import Svg, { Path } from 'react-native-svg';
+import { isIphoneX } from 'react-native-iphone-x-helper';
 
-import {Home} from '../screens/Home';
-import {COLORS, icons} from '../constants';
+import { Home } from '../screens/Home';
+import { COLORS, icons } from '../constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,9 +23,9 @@ const CustomTabBarButton = ({
 
   if (isSelected) {
     return (
-      <View style={{flex: 1, alignItems: 'center'}}>
-        <View style={{flexDirection: 'row', position: 'absolute', top: 0}}>
-          <View style={{flex: 1, backgroundColor: COLORS.white}} />
+      <View style={{ flex: 1, alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row', position: 'absolute', top: 0 }}>
+          <View style={{ flex: 1, backgroundColor: COLORS.white }} />
           <Svg width={70} height={61} viewBox="0 0 75 61">
             {/* circle-block curve */}
             <Path
@@ -33,7 +33,7 @@ const CustomTabBarButton = ({
               fill={COLORS.white}
             />
           </Svg>
-          <View style={{flex: 1, backgroundColor: COLORS.white}} />
+          <View style={{ flex: 1, backgroundColor: COLORS.white }} />
         </View>
 
         <TouchableOpacity
@@ -101,7 +101,7 @@ export const Tabs = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <Image
               source={icons.cutlery}
               resizeMode="contain"
@@ -119,7 +119,7 @@ export const Tabs = () => {
         name="Search"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <Image
               source={icons.search}
               resizeMode="contain"
@@ -137,7 +137,7 @@ export const Tabs = () => {
         name="Like"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <Image
               source={icons.like}
               resizeMode="contain"
@@ -155,7 +155,7 @@ export const Tabs = () => {
         name="User"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <Image
               source={icons.user}
               resizeMode="contain"

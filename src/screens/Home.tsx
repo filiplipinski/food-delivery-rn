@@ -1,13 +1,13 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {COLORS, FONTS, icons, SIZES} from '../constants';
-import {initialCurrentLocation} from '../data/data';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { COLORS, FONTS, icons, SIZES } from '../constants';
+import { initialCurrentLocation } from '../data/data';
 
 export const Home = () => {
   return (
     <SafeAreaView>
-      <View style={{flexDirection: 'row', height: 50}}>
+      <View style={{ flexDirection: 'row', height: 50 }}>
         <TouchableOpacity
           style={{
             width: 50,
@@ -24,7 +24,8 @@ export const Home = () => {
           />
         </TouchableOpacity>
 
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <View
+          style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <View
             style={{
               width: '70%',
@@ -34,7 +35,7 @@ export const Home = () => {
               justifyContent: 'center',
               borderRadius: SIZES.radius,
             }}>
-            <Text style={{...FONTS.h3}}>
+            <Text style={{ ...FONTS.h3 }}>
               {initialCurrentLocation.streetName}
             </Text>
           </View>
