@@ -5,7 +5,7 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 
-import { HomeScreen } from '../screens/HomeScreen';
+import { HomeScreen } from '../screens/homeScreen/HomeScreen';
 import { COLORS, icons } from '../constants';
 import { CustomTabBar } from './CustomTabBar';
 import { CustomTabBarButton } from './CustomTabBarButton';
@@ -78,6 +78,10 @@ export const BottomTabNavigator = () => {
 
 const styles = StyleSheet.create({
   tabBar: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
     borderTopWidth: 0,
     backgroundColor: 'transparent',
     elevation: 0,
