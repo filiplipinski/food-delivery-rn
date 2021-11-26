@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 import { FONTS, icons, SIZES } from '../../../constants';
-import { initialCurrentLocation } from '../../../data/data';
+import { initialCurrentLocation } from '../../../data/location';
 
 export const HomeTopbar = () => {
   return (

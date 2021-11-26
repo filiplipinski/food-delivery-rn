@@ -1,65 +1,5 @@
-import { icons, images } from '../constants';
-
-export const initialCurrentLocation = {
-  streetName: 'Kuching',
-  gps: {
-    latitude: 1.5496614931250685,
-    longitude: 110.36381866919922,
-  },
-};
-
-export const categoryData = [
-  {
-    id: 1,
-    name: 'Rice',
-    icon: icons.rice_bowl,
-  },
-  {
-    id: 2,
-    name: 'Noodles',
-    icon: icons.noodle,
-  },
-  {
-    id: 3,
-    name: 'Hot Dogs',
-    icon: icons.hotdog,
-  },
-  {
-    id: 4,
-    name: 'Salads',
-    icon: icons.salad,
-  },
-  {
-    id: 5,
-    name: 'Burgers',
-    icon: icons.hamburger,
-  },
-  {
-    id: 6,
-    name: 'Pizza',
-    icon: icons.pizza,
-  },
-  {
-    id: 7,
-    name: 'Snacks',
-    icon: icons.fries,
-  },
-  {
-    id: 8,
-    name: 'Sushi',
-    icon: icons.sushi,
-  },
-  {
-    id: 9,
-    name: 'Desserts',
-    icon: icons.donut,
-  },
-  {
-    id: 10,
-    name: 'Drinks',
-    icon: icons.drink,
-  },
-];
+import { ImageSourcePropType } from 'react-native';
+import { images } from '../constants';
 
 enum PriceRatingEnum {
   Affordable = 'affordable',
@@ -67,7 +7,35 @@ enum PriceRatingEnum {
   Expensive = 'expensive',
 }
 
-export const restaurantData = [
+type Menu = {
+  menuId: number;
+  name: string;
+  photo: ImageSourcePropType;
+  description: string;
+  calories: number;
+  price: number;
+};
+
+export type Restaurant = {
+  id: number;
+  name: string;
+  rating: number;
+  categories: number[];
+  priceRating: PriceRatingEnum;
+  photo: ImageSourcePropType;
+  duration: string;
+  location: {
+    latitude: number;
+    longitude: number;
+  };
+  courier: {
+    avatar: ImageSourcePropType;
+    name: string;
+  };
+  menu: Menu[];
+};
+
+export const restaurantsData: Restaurant[] = [
   {
     id: 1,
     name: 'ByProgrammers Burger',
