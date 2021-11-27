@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Category } from '../../data/categories';
 import { restaurantsData } from '../../data/restaurants';
 import { HomeMainCategories } from './components/MainCategories';
+import { HomeRestaurantList } from './components/RestaurantList';
 
 import { HomeTopbar } from './components/Topbar';
 
@@ -14,6 +15,13 @@ export const HomeScreen = () => {
   );
 
   const handleCategorySelect = (category: Category) => {
+    if (category.id === selectedCategory?.id) {
+      // unselect
+
+      setSelectedCategory(null);
+      setRestaurants(restaurantsData); // set to default
+      return;
+    }
     const restaurantList = restaurantsData.filter(a =>
       a.categories.includes(category.id),
     );
@@ -29,6 +37,7 @@ export const HomeScreen = () => {
         selectedCategory={selectedCategory}
         onCategorySelect={handleCategorySelect}
       />
+      <HomeRestaurantList restaurants={restaurants} />
     </SafeAreaView>
   );
 };

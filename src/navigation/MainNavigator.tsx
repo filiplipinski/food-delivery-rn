@@ -9,7 +9,7 @@ import { OrderDeliveryScreen } from '../screens/OrderDeliveryScreen';
 import { RestaurantScreen } from '../screens/RestaurantScreen';
 import { BottomTabNavigator, BottomTabParamList } from './BottomTabNavigator';
 
-type MainNavigatorParamList = {
+export type MainNavigatorParamList = {
   BottomTab: NavigatorScreenParams<BottomTabParamList>; // undefined means that route doesn't have params
   OrderDelivery: undefined;
   Restaurant: undefined;

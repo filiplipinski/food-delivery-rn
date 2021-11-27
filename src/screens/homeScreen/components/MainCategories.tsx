@@ -22,7 +22,7 @@ export const HomeMainCategories = ({
 }: HomeMainCategoriesProps) => {
   return (
     <View>
-      <Text style={styles.header}>Main {'\n'}Categories</Text>
+      <Text style={styles.header}>Main Categories</Text>
 
       <FlatList
         data={categoriesData}
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     ...FONTS.h1,
     fontWeight: 'normal',
     marginTop: SIZES.padding * 3,
-    marginBottom: SIZES.padding * 2,
+    marginBottom: SIZES.padding,
     marginLeft: SIZES.padding * 2,
   },
   flatListContainer: {
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     marginRight: SIZES.padding,
     backgroundColor: COLORS.white,
     borderRadius: SIZES.radius,
-    shadowColor: '#000',
+    shadowColor: COLORS.basic.black,
     shadowOffset: {
       width: 0,
       height: 3,
