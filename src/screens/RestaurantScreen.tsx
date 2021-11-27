@@ -3,9 +3,10 @@ import { NavigationProp, RouteProp } from '@react-navigation/core';
 import { StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { icons } from '../constants';
-import { Topbar } from '../ui/Topbar';
-import { MainNavigatorParamList } from '../navigation/MainNavigator';
+import { icons } from 'constants/icons';
+import { Topbar } from 'ui/Topbar';
+import { MainNavigatorParamList } from 'navigation/MainNavigator';
+import { colors } from 'constants/theme';
 
 type RestaurantScreenProps = {
   navigation: NavigationProp<MainNavigatorParamList>;
@@ -33,6 +34,6 @@ export const RestaurantScreen = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7F7F8', // TODO: color
+    backgroundColor: colors.background,
   },
 });

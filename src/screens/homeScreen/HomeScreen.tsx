@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { icons } from '../../constants';
-import { Category } from '../../data/categories';
-import { initialCurrentLocation } from '../../data/location';
-import { restaurantsData } from '../../data/restaurants';
-import { Topbar } from '../../ui/Topbar';
+
+import { icons } from 'constants/icons';
+import { Category } from 'data/categories';
+import { initialCurrentLocation } from 'data/location';
+import { restaurantsData } from 'data/restaurants';
+import { Topbar } from 'ui/Topbar';
+
 import { HomeMainCategories } from './components/MainCategories';
 import { HomeRestaurantList } from './components/RestaurantList';
+import { colors } from 'constants/theme';
 
 export const HomeScreen = () => {
   const [restaurants, setRestaurants] = useState(restaurantsData);
@@ -52,6 +55,6 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7F7F8', // TODO: color
+    backgroundColor: colors.background,
   },
 });

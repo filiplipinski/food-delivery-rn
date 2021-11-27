@@ -8,8 +8,8 @@ import {
   FlatList,
 } from 'react-native';
 
-import { COLORS, FONTS, SIZES } from '../../../constants';
-import { categoriesData, Category } from '../../../data/categories';
+import { colors, fonts, sizes } from 'constants/theme';
+import { categoriesData, Category } from 'data/categories';
 
 type HomeMainCategoriesProps = {
   selectedCategory: Category | null;
@@ -67,26 +67,26 @@ export const HomeMainCategories = ({
 
 const styles = StyleSheet.create({
   header: {
-    ...FONTS.h1,
+    ...fonts.h1,
     fontWeight: 'normal',
-    marginTop: SIZES.padding * 3,
-    marginBottom: SIZES.padding,
-    marginLeft: SIZES.padding * 2,
+    marginTop: sizes.padding * 3,
+    marginBottom: sizes.padding,
+    marginLeft: sizes.padding * 2,
   },
   flatListContainer: {
-    paddingLeft: SIZES.padding * 2,
-    paddingRight: SIZES.padding * 2,
-    paddingBottom: SIZES.padding * 2, // required, otherwise boxShadow bottom is cut
+    paddingLeft: sizes.padding * 2,
+    paddingRight: sizes.padding * 2,
+    paddingBottom: sizes.padding * 2, // required, otherwise boxShadow bottom is cut
   },
   categoryContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: SIZES.padding,
-    paddingBottom: SIZES.padding * 2,
-    marginRight: SIZES.padding,
-    backgroundColor: COLORS.white,
-    borderRadius: SIZES.radius,
-    shadowColor: COLORS.basic.black,
+    padding: sizes.padding,
+    paddingBottom: sizes.padding * 2,
+    marginRight: sizes.padding,
+    backgroundColor: colors.white,
+    borderRadius: sizes.radius,
+    shadowColor: colors.basic.black,
     shadowOffset: {
       width: 0,
       height: 3,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   selectedCategoryContainer: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: colors.primary,
   },
   icon: {
     width: 30,
@@ -108,17 +108,17 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.lightGray,
+    backgroundColor: colors.lightGray,
   },
   selectedInnerWrapper: {
-    backgroundColor: COLORS.white,
+    backgroundColor: colors.white,
   },
   text: {
-    ...FONTS.body5,
-    marginTop: SIZES.padding,
-    color: COLORS.black,
+    ...fonts.body5,
+    marginTop: sizes.padding,
+    color: colors.black,
   },
   selectedText: {
-    color: COLORS.white,
+    color: colors.white,
   },
 });

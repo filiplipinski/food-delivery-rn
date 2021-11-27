@@ -9,10 +9,11 @@ import {
   FlatList,
 } from 'react-native';
 
-import { COLORS, FONTS, icons, SIZES } from '../../../constants';
-import { categoriesData } from '../../../data/categories';
-import { PriceRatingEnum, Restaurant } from '../../../data/restaurants';
-import { MainNavigatorParamList } from '../../../navigation/MainNavigator';
+import { colors, fonts, sizes } from 'constants/theme';
+import { icons } from 'constants/icons';
+import { categoriesData } from 'data/categories';
+import { PriceRatingEnum, Restaurant } from 'data/restaurants';
+import { MainNavigatorParamList } from 'navigation/MainNavigator';
 
 type HomeRestaurantListProps = {
   restaurants: Restaurant[];
@@ -51,21 +52,21 @@ export const HomeRestaurantList = ({
             />
 
             <View style={styles.durationTextContainer}>
-              <Text style={{ ...FONTS.h4 }}>{item.duration}</Text>
+              <Text style={{ ...fonts.h4 }}>{item.duration}</Text>
             </View>
           </View>
 
-          <Text style={{ ...FONTS.body2 }}>{item.name}</Text>
+          <Text style={{ ...fonts.body2 }}>{item.name}</Text>
 
           <View style={styles.detailsContainer}>
             <Image source={icons.star} style={styles.starImage} />
-            <Text style={{ ...FONTS.body3 }}>{item.rating}</Text>
+            <Text style={{ ...fonts.body3 }}>{item.rating}</Text>
 
             <View style={styles.categories}>
               {item.categories.map(categoryId => {
                 return (
                   <View style={styles.category} key={categoryId}>
-                    <Text style={{ ...FONTS.body3 }}>
+                    <Text style={{ ...fonts.body3 }}>
                       {getCategoryNameById(categoryId)}
                     </Text>
                     <Text style={styles.middot}>&bull;</Text>
@@ -102,23 +103,23 @@ export const HomeRestaurantList = ({
 
 const styles = StyleSheet.create({
   flatListContainer: {
-    paddingHorizontal: SIZES.padding * 2,
+    paddingHorizontal: sizes.padding * 2,
     paddingBottom: 60, // bottomBar height + some space
   },
   itemContainer: {
-    marginBottom: SIZES.padding * 2,
+    marginBottom: sizes.padding * 2,
   },
   durationTextContainer: {
     position: 'absolute',
     bottom: 0,
     height: 50,
-    width: SIZES.width * 0.3,
-    backgroundColor: COLORS.white,
-    borderTopRightRadius: SIZES.radius,
-    borderBottomLeftRadius: SIZES.radius,
+    width: sizes.width * 0.3,
+    backgroundColor: colors.white,
+    borderTopRightRadius: sizes.radius,
+    borderBottomLeftRadius: sizes.radius,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: COLORS.basic.black,
+    shadowColor: colors.basic.black,
     shadowOffset: {
       width: 0,
       height: 3,
@@ -128,21 +129,21 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   imageContainer: {
-    marginBottom: SIZES.padding,
+    marginBottom: sizes.padding,
   },
   image: {
     width: '100%',
     height: 200,
-    borderRadius: SIZES.radius,
+    borderRadius: sizes.radius,
   },
   detailsContainer: {
-    marginTop: SIZES.padding,
+    marginTop: sizes.padding,
     flexDirection: 'row',
   },
   starImage: {
     height: 20,
     width: 20,
-    tintColor: COLORS.primary,
+    tintColor: colors.primary,
     marginRight: 10,
   },
   categories: {
@@ -153,16 +154,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   middot: {
-    ...FONTS.body3,
-    color: COLORS.darkgray,
+    ...fonts.body3,
+    color: colors.darkgray,
     marginLeft: 5,
     marginRight: 5,
   },
   price: {
-    ...FONTS.body3,
-    color: COLORS.basic.black,
+    ...fonts.body3,
+    color: colors.basic.black,
   },
   priceCheaper: {
-    color: COLORS.darkgray,
+    color: colors.darkgray,
   },
 });

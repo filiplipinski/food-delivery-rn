@@ -5,11 +5,13 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 
-import { HomeScreen } from '../screens/homeScreen/HomeScreen';
-import { COLORS, icons } from '../constants';
+import { HomeScreen } from 'screens/homeScreen/HomeScreen';
+import { NotFoundScreen } from 'screens/NotFoundScreen';
+import { colors } from 'constants/theme';
+import { icons, Icons } from 'constants/icons';
+
 import { CustomTabBar } from './CustomTabBar';
 import { CustomTabBarButton } from './CustomTabBarButton';
-import { NotFoundScreen } from '../screens/NotFoundScreen';
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -23,8 +25,7 @@ const { Navigator, Screen } = createBottomTabNavigator<BottomTabParamList>();
 const getTabScreenOptions = ({
   iconName,
 }: {
-  // TODO: zamineic typ na Icons, gdy podmienic na .ts
-  iconName: keyof typeof icons;
+  iconName: Icons;
 }): BottomTabNavigationOptions => {
   return {
     tabBarIcon: ({ focused }) => (
@@ -89,9 +90,9 @@ const styles = StyleSheet.create({
   tabBarIcon: {
     width: 25,
     height: 25,
-    tintColor: COLORS.secondary,
+    tintColor: colors.secondary,
   },
   focusedTabBarIcon: {
-    tintColor: COLORS.primary,
+    tintColor: colors.primary,
   },
 });

@@ -5,10 +5,11 @@ import {
   NavigatorScreenParams,
 } from '@react-navigation/native';
 
-import { OrderDeliveryScreen } from '../screens/OrderDeliveryScreen';
-import { RestaurantScreen } from '../screens/RestaurantScreen';
+import { OrderDeliveryScreen } from 'screens/OrderDeliveryScreen';
+import { RestaurantScreen } from 'screens/RestaurantScreen';
+import { Restaurant } from 'data/restaurants';
+
 import { BottomTabNavigator, BottomTabParamList } from './BottomTabNavigator';
-import { Restaurant } from '../data/restaurants';
 
 export type MainNavigatorParamList = {
   BottomTab: NavigatorScreenParams<BottomTabParamList>; // undefined means that route doesn't have params

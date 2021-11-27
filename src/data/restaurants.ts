@@ -1,5 +1,5 @@
 import { ImageSourcePropType } from 'react-native';
-import { images } from '../constants';
+import { images } from 'constants/images';
 
 export enum PriceRatingEnum {
   Affordable = 1,

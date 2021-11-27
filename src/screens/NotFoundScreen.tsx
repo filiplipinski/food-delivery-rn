@@ -3,8 +3,8 @@ import { Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { RouteProp } from '@react-navigation/native';
 
-import { FONTS } from '../constants';
-import { BottomTabParamList } from '../navigation/BottomTabNavigator';
+import { fonts } from 'constants/theme';
+import { BottomTabParamList } from 'navigation/BottomTabNavigator';
 
 type Props = {
   // TODO; mozna by to ladniej zrobic niz od "Like"
@@ -18,13 +18,11 @@ export const NotFoundScreen = ({ route }: Props) => {
     <SafeAreaView
       style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
     >
-      <Text style={{ ...FONTS.h4, marginBottom: 16 }}>
+      <Text style={{ ...fonts.h4, marginBottom: 16 }}>
         Hello on <Text style={{ fontWeight: 'bold' }}>{screenName}</Text>{' '}
         screen!
       </Text>
-      <Text style={{ ...FONTS.h2 }}>Page is not available yet ☹</Text>
-      {/* TODO: redirect na homepage */}
-      {/* <Link to="/">Go Home</Link> */}
+      <Text style={{ ...fonts.h2 }}>Page is not available yet ☹</Text>
     </SafeAreaView>
   );
 };

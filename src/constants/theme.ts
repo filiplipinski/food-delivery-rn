@@ -1,28 +1,31 @@
 import { Dimensions } from 'react-native';
+
 const { width, height } = Dimensions.get('window');
 
-export const COLORS = {
-  // base colors
-  primary: '#FC6D3F', // orange
-  secondary: '#CDCDD2', // gray
+export const colors = {
+  primary: '#FC6D3F',
+  secondary: '#CDCDD2',
 
   basic: {
     black: '#000',
     white: '#FFF',
   },
-  // colors
+
   black: '#1E1F20',
   white: '#FFFFFF',
+
+  background: '#F7F7F7',
 
   lightGray: '#F5F5F6',
   lightGray2: '#F6F6F7',
   lightGray3: '#EFEFF1',
   lightGray4: '#F8F8F9',
+  lightGray5: '#EFEFF1',
   transparent: 'transparent',
   darkgray: '#898C95',
 };
 
-export const SIZES = {
+export const sizes = {
   // global sizes
   base: 8,
   font: 14,
@@ -47,47 +50,49 @@ export const SIZES = {
   height,
 };
 
-export const FONTS = {
+export const fonts = {
   largeTitle: {
     fontFamily: 'Roboto-regular',
-    fontSize: SIZES.largeTitle,
+    fontSize: sizes.largeTitle,
     lineHeight: 55,
   },
   h1: {
     fontFamily: 'Roboto-Black',
-    fontSize: SIZES.h1,
+    fontSize: sizes.h1,
     lineHeight: 36,
   },
-  h2: { fontFamily: 'Roboto-Bold', fontSize: SIZES.h2, lineHeight: 30 },
-  h3: { fontFamily: 'Roboto-Bold', fontSize: SIZES.h3, lineHeight: 22 },
-  h4: { fontFamily: 'Roboto-Bold', fontSize: SIZES.h4, lineHeight: 22 },
+  h2: { fontFamily: 'Roboto-Bold', fontSize: sizes.h2, lineHeight: 30 },
+  h3: { fontFamily: 'Roboto-Bold', fontSize: sizes.h3, lineHeight: 22 },
+  h4: { fontFamily: 'Roboto-Bold', fontSize: sizes.h4, lineHeight: 22 },
   body1: {
     fontFamily: 'Roboto-Regular',
-    fontSize: SIZES.body1,
+    fontSize: sizes.body1,
     lineHeight: 36,
   },
   body2: {
     fontFamily: 'Roboto-Regular',
-    fontSize: SIZES.body2,
+    fontSize: sizes.body2,
     lineHeight: 30,
   },
   body3: {
     fontFamily: 'Roboto-Regular',
-    fontSize: SIZES.body3,
+    fontSize: sizes.body3,
     lineHeight: 22,
   },
   body4: {
     fontFamily: 'Roboto-Regular',
-    fontSize: SIZES.body4,
+    fontSize: sizes.body4,
     lineHeight: 22,
   },
   body5: {
     fontFamily: 'Roboto-Regular',
-    fontSize: SIZES.body5,
+    fontSize: sizes.body5,
     lineHeight: 22,
   },
 };
 
-const appTheme = { COLORS, SIZES, FONTS };
-
-export default appTheme;
+export const theme = {
+  colors,
+  sizes,
+  fonts,
+};

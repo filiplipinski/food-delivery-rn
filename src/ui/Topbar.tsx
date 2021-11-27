@@ -8,7 +8,7 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 
-import { FONTS, SIZES } from '../constants';
+import { colors, fonts, sizes } from 'constants/theme';
 
 type TopbarProps = {
   location: string;
@@ -33,7 +33,7 @@ export const Topbar = ({
 
       <View style={styles.chipContainer}>
         <View style={styles.chip}>
-          <Text style={{ ...FONTS.h3 }}>{location}</Text>
+          <Text style={{ ...fonts.h3 }}>{location}</Text>
         </View>
       </View>
 
@@ -67,9 +67,9 @@ const styles = StyleSheet.create({
   chip: {
     width: '80%',
     height: '100%',
-    backgroundColor: '#EFEFF1', // TODO: color
+    backgroundColor: colors.lightGray5,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: SIZES.radius,
+    borderRadius: sizes.radius,
   },
 });

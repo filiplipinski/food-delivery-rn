@@ -1,5 +1,5 @@
 import { ImageSourcePropType } from 'react-native';
-import { icons } from '../constants';
+import { icons } from 'constants/icons';
 
 export type Category = {
   id: number;

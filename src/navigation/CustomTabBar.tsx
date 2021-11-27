@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { BottomTabBar, BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 
-import { COLORS } from '../constants';
+import { colors } from 'constants/theme';
 
 export const CustomTabBar = (props: BottomTabBarProps) => {
   if (isIphoneX()) {
@@ -16,7 +16,7 @@ export const CustomTabBar = (props: BottomTabBarProps) => {
             left: 0,
             right: 0,
             height: 30,
-            backgroundColor: COLORS.white,
+            backgroundColor: colors.white,
           }}
         />
         <BottomTabBar {...props} />
