@@ -8,11 +8,14 @@ import {
 import { OrderDeliveryScreen } from '../screens/OrderDeliveryScreen';
 import { RestaurantScreen } from '../screens/RestaurantScreen';
 import { BottomTabNavigator, BottomTabParamList } from './BottomTabNavigator';
+import { Restaurant } from '../data/restaurants';
 
 export type MainNavigatorParamList = {
   BottomTab: NavigatorScreenParams<BottomTabParamList>; // undefined means that route doesn't have params
   OrderDelivery: undefined;
-  Restaurant: undefined;
+  Restaurant: {
+    restaurant: Restaurant;
+  };
 };
 
 const { Navigator, Screen } = createStackNavigator<MainNavigatorParamList>();

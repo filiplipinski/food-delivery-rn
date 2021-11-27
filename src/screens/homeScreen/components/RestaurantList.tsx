@@ -38,12 +38,9 @@ export const HomeRestaurantList = ({
         <TouchableOpacity
           style={styles.itemContainer}
           onPress={() => {
-            navigation.navigate('Restaurant');
-            // TODO:
-            // navigation.navigate('Restaurant', {
-            //   item,
-            //   currentLocation,
-            // })
+            navigation.navigate('Restaurant', {
+              restaurant: item,
+            });
           }}
         >
           <View style={styles.imageContainer}>

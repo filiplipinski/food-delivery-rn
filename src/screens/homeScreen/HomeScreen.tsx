@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { icons } from '../../constants';
 import { Category } from '../../data/categories';
+import { initialCurrentLocation } from '../../data/location';
 import { restaurantsData } from '../../data/restaurants';
+import { Topbar } from '../../ui/Topbar';
 import { HomeMainCategories } from './components/MainCategories';
 import { HomeRestaurantList } from './components/RestaurantList';
-
-import { HomeTopbar } from './components/Topbar';
 
 export const HomeScreen = () => {
   const [restaurants, setRestaurants] = useState(restaurantsData);
@@ -32,7 +33,13 @@ export const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <HomeTopbar />
+      <Topbar
+        location={initialCurrentLocation.streetName}
+        leftIcon={icons.nearby}
+        rightIcon={icons.basket}
+        onLeftIconPress={() => {}}
+        onRightIconPress={() => {}}
+      />
       <HomeMainCategories
         selectedCategory={selectedCategory}
         onCategorySelect={handleCategorySelect}
