@@ -7,7 +7,7 @@ export enum PriceRatingEnum {
   Expensive = 3,
 }
 
-type Menu = {
+export type Menu = {
   id: number;
   name: string;
   photo: ImageSourcePropType;
@@ -55,7 +55,7 @@ export const restaurantsData: Restaurant[] = [
     menu: [
       {
         id: 1,
-        name: 'Crispy Chicken Burger',
+        name: 'Crispy Chicken Burger no1',
         photo: images.crispy_chicken_burger,
         description: 'Burger with crispy chicken, cheese and lettuce',
         calories: 200,
@@ -63,7 +63,7 @@ export const restaurantsData: Restaurant[] = [
       },
       {
         id: 2,
-        name: 'Crispy Chicken Burger with Honey Mustard',
+        name: 'Crispy Chicken Burger no2',
         photo: images.honey_mustard_chicken_burger,
         description: 'Crispy Chicken Burger with Honey Mustard Coleslaw',
         calories: 250,

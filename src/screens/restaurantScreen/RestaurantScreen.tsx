@@ -10,6 +10,7 @@ import { colors } from 'constants/theme';
 
 import { RestaurantInfo } from './components/RestaurantInfo';
 import { orderItemsReducer } from './reducers/orderItemsReducer';
+import { RestaurantOrder } from './components/RestaurantOrder';
 
 type RestaurantScreenProps = {
   navigation: NavigationProp<MainNavigatorParamList>;
@@ -38,6 +39,8 @@ export const RestaurantScreen = ({
         orderItems={orderItems}
         dispatchOrderItems={dispatchOrderItems}
       />
+
+      <RestaurantOrder orderItems={orderItems} />
     </SafeAreaView>
   );
 };

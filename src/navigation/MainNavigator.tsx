@@ -5,15 +5,15 @@ import {
   NavigatorScreenParams,
 } from '@react-navigation/native';
 
-import { OrderDeliveryScreen } from 'screens/OrderDeliveryScreen';
 import { RestaurantScreen } from 'screens/restaurantScreen/RestaurantScreen';
 import { Restaurant } from 'data/restaurants';
+import { NotFoundScreen } from 'screens/NotFoundScreen';
 
 import { BottomTabNavigator, BottomTabParamList } from './BottomTabNavigator';
 
 export type MainNavigatorParamList = {
   BottomTab: NavigatorScreenParams<BottomTabParamList>; // undefined means that route doesn't have params
-  OrderDelivery: undefined;
+  OrderDelivery?: { screenName: string }; // TODO: placeholder
   Restaurant: {
     restaurant: Restaurant;
   };
@@ -29,7 +29,11 @@ export const MainNavigator = () => {
         initialRouteName="BottomTab"
       >
         <Screen name="BottomTab" component={BottomTabNavigator} />
-        <Screen name="OrderDelivery" component={OrderDeliveryScreen} />
+        <Screen
+          name="OrderDelivery"
+          initialParams={{ screenName: 'Order Delivery' }} // TODO: placeholder
+          component={NotFoundScreen}
+        />
         <Screen name="Restaurant" component={RestaurantScreen} />
       </Navigator>
     </NavigationContainer>

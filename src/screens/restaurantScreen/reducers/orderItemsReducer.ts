@@ -40,14 +40,12 @@ type RemoveOrderItemAction = ReducerAction<
   RemoveOrderItemPaylod
 >;
 
-// reducer types
-type OrderItemsReducerState = OrderItem[];
 export type OrderItemsReducerActions =
   | AddOrderItemAction
   | RemoveOrderItemAction;
 
 export const orderItemsReducer = (
-  state: OrderItemsReducerState,
+  state: OrderItem[],
   action: OrderItemsReducerActions,
 ) => {
   switch (action.type) {

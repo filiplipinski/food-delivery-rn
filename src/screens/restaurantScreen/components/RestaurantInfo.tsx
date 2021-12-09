@@ -11,12 +11,15 @@ import {
 import { sizes, colors, fonts } from 'constants/theme';
 import { icons } from 'constants/icons';
 import { Restaurant } from 'data/restaurants';
+import { formatCurrency } from 'helpers/formatCurrency';
+
 import {
   AddOrderItem,
   OrderItem,
   OrderItemsReducerActions,
   RemoveOrderItem,
 } from '../reducers/orderItemsReducer';
+import { RestaurantDots } from './RestaurantDots';
 
 type Props = {
   restaurant: Restaurant;
@@ -45,68 +48,77 @@ export const RestaurantInfo = ({
   };
 
   return (
-    <Animated.ScrollView
-      horizontal
-      pagingEnabled
-      scrollEventThrottle={16}
-      snapToAlignment="center"
-      showsHorizontalScrollIndicator={false}
-      onScroll={Animated.event(
-        [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-        { useNativeDriver: false },
-      )}
-    >
-      {restaurant.menu.map(item => (
-        <View key={item.id} style={styles.itemWrapper}>
-          <View style={styles.imageWrapper}>
-            {/* Image */}
-            <Image
-              source={item.photo}
-              resizeMode="cover"
-              style={styles.foodImage}
-            />
+    <View>
+      <Animated.ScrollView
+        horizontal
+        pagingEnabled
+        scrollEventThrottle={16}
+        snapToAlignment="center"
+        showsHorizontalScrollIndicator={false}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+          { useNativeDriver: false },
+        )}
+      >
+        {restaurant.menu.map(item => (
+          <View key={item.id} style={styles.itemWrapper}>
+            <View style={styles.imageWrapper}>
+              {/* Image */}
+              <Image
+                source={item.photo}
+                resizeMode="cover"
+                style={styles.foodImage}
+              />
 
-            {/* Quantity */}
-            <View style={styles.quantityWrapper}>
-              <TouchableOpacity
-                style={[styles.quantityBtn, styles.minusQuantityBtn]}
-                onPress={() => handleRemoveItem(item.id)}
-              >
-                <Text style={{ ...fonts.body1 }}>-</Text>
-              </TouchableOpacity>
+              {/* Quantity */}
+              <View style={styles.quantityWrapper}>
+                <TouchableOpacity
+                  style={[styles.quantityBtn, styles.minusQuantityBtn]}
+                  onPress={() => handleRemoveItem(item.id)}
+                >
+                  <Text style={{ ...fonts.body1 }}>-</Text>
+                </TouchableOpacity>
 
-              <View style={styles.quantityBtn}>
-                <Text style={{ ...fonts.h2 }}>{getOrderQty(item.id)}</Text>
+                <View style={styles.quantityBtn}>
+                  <Text style={{ ...fonts.h2 }}>{getOrderQty(item.id)}</Text>
+                </View>
+
+                <TouchableOpacity
+                  style={[styles.quantityBtn, styles.plusQuantityBtn]}
+                  onPress={() => handleAddItem(item.id, item.price)}
+                >
+                  <Text style={{ ...fonts.body1 }}>+</Text>
+                </TouchableOpacity>
               </View>
+            </View>
 
-              <TouchableOpacity
-                style={[styles.quantityBtn, styles.plusQuantityBtn]}
-                onPress={() => handleAddItem(item.id, item.price)}
-              >
-                <Text style={{ ...fonts.body1 }}>+</Text>
-              </TouchableOpacity>
+            {/* Name & Description */}
+            <View style={styles.textContainer}>
+              <Text style={styles.title}>{item.name}</Text>
+              <Text style={{ ...fonts.h4, fontWeight: 'normal' }}>
+                Price:{' '}
+                <Text style={{ ...fonts.h4, fontWeight: 'bold' }}>
+                  {formatCurrency(item.price)}
+                </Text>
+              </Text>
+
+              <Text style={styles.description}>{item.description}</Text>
+            </View>
+
+            {/* Calories */}
+            <View style={styles.caloriesTextContainer}>
+              <Image source={icons.fire} style={styles.fireIcon} />
+
+              <Text style={styles.caloriesText}>
+                {item.calories.toFixed(2)} cal
+              </Text>
             </View>
           </View>
+        ))}
+      </Animated.ScrollView>
 
-          {/* Name & Description */}
-          <View style={styles.textContainer}>
-            <Text style={styles.title}>
-              {item.name} - {item.price.toFixed(2)}
-            </Text>
-            <Text style={styles.description}>{item.description}</Text>
-          </View>
-
-          {/* Calories */}
-          <View style={styles.caloriesTextContainer}>
-            <Image source={icons.fire} style={styles.fireIcon} />
-
-            <Text style={styles.caloriesText}>
-              {item.calories.toFixed(2)} cal
-            </Text>
-          </View>
-        </View>
-      ))}
-    </Animated.ScrollView>
+      <RestaurantDots menu={restaurant.menu} scrollX={scrollX} />
+    </View>
   );
 };
 
@@ -148,20 +160,22 @@ const styles = StyleSheet.create({
     width: sizes.width,
     alignItems: 'center',
     marginTop: 24,
-    paddingHorizontal: sizes.padding * 2,
+    paddingHorizontal: sizes.padding,
   },
   title: {
-    ...fonts.h2,
-    marginBottom: 10,
+    ...fonts.h3,
+    marginBottom: 4,
     textAlign: 'center',
   },
   description: {
     ...fonts.body3,
+    marginTop: 8,
     textAlign: 'center',
   },
   caloriesTextContainer: {
     flexDirection: 'row',
-    marginTop: 10,
+    paddingTop: 8,
+    marginTop: 'auto',
   },
   fireIcon: {
     width: 20,
