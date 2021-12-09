@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/native';
 
 import { OrderDeliveryScreen } from 'screens/OrderDeliveryScreen';
-import { RestaurantScreen } from 'screens/RestaurantScreen';
+import { RestaurantScreen } from 'screens/restaurantScreen/RestaurantScreen';
 import { Restaurant } from 'data/restaurants';
 
 import { BottomTabNavigator, BottomTabParamList } from './BottomTabNavigator';
