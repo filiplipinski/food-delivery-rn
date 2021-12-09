@@ -110,7 +110,7 @@ export const RestaurantInfo = ({
               <Image source={icons.fire} style={styles.fireIcon} />
 
               <Text style={styles.caloriesText}>
-                {item.calories.toFixed(2)} cal
+                {item.calories.toFixed(0)} calories
               </Text>
             </View>
           </View>
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
   textContainer: {
     width: sizes.width,
     alignItems: 'center',
-    marginTop: 24,
+    marginTop: 32,
     paddingHorizontal: sizes.padding,
   },
   title: {
